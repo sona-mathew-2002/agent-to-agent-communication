@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+
+- story: schedule appointment
+  steps:
+  - intent: ask_how_to_help
+  - action: utter_request_appointment
+  - intent: indicate_availability
+  - action: action_provide_availability
+  - intent: confirm_appointment
+  - action: utter_confirm_appointment
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: reschedule appointment
+  steps:
+  - intent: ask_how_to_help
+  - action: utter_request_appointment
+  - intent: indicate_availability
+  - action: action_provide_availability
+  - intent: acknowledge_unavailability
+  - action: utter_respond_unavailability
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_how_to_help
+  - action: utter_request_appointment
+  - intent: indicate_availability
+  - action: action_provide_availability
+  - slot_was_set:
+    - agent1_availability:
+      - '2024-07-22'
+      - '2024-07-24'
+      - '2024-07-26'
+      - '2024-07-29'
+      - '2024-07-31'
+      - '2024-08-02'
+      - '2024-08-05'
+      - '2024-08-07'
+      - '2024-08-09'
+      - '2024-08-12'
+      - '2024-08-14'
+      - '2024-08-16'
+      - '2024-08-19'
+  - intent: confirm_appointment
+    entities:
+    - date: '2024-07-24'
+  - slot_was_set:
+    - scheduled_date: '2024-07-24'
+  - action: utter_confirm_appointment
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: greet
+  - intent: confirm_appointment
+    entities:
+    - date: '2024-07-24'
+  - slot_was_set:
+    - scheduled_date: '2024-07-24'
+  - action: action_deactivate_loop
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_how_to_help
+  - action: utter_request_appointment
+  - intent: indicate_availability
+  - action: action_provide_availability
+  - slot_was_set:
+    - agent1_availability:
+      - '2024-07-22'
+      - '2024-07-24'
+      - '2024-07-26'
+      - '2024-07-29'
+      - '2024-07-31'
+      - '2024-08-02'
+      - '2024-08-05'
+      - '2024-08-07'
+      - '2024-08-09'
+      - '2024-08-12'
+      - '2024-08-14'
+      - '2024-08-16'
+      - '2024-08-19'
+  - intent: confirm_appointment
+    entities:
+    - date: '2024-07-24'
+  - slot_was_set:
+    - scheduled_date: '2024-07-24'
+  - action: utter_confirm_appointment

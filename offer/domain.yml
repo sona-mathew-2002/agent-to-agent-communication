@@ -1,0 +1,43 @@
+version: '3.1'
+intents:
+- acknowledge_unavailability
+- ask_how_to_help
+- confirm_appointment
+- goodbye
+- greet
+- indicate_availability
+- provide_availability
+- request_appointment
+entities:
+- date
+slots:
+  agent1_availability:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: custom
+  scheduled_date:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: date
+responses:
+  utter_greet:
+  - text: Hi
+  utter_request_appointment:
+  - text: Can I schedule an appointment?
+  utter_respond_unavailability:
+  - text: Oh. I'll let you know about my updated schedule
+  utter_confirm_appointment:
+  - text: Ok, see you then!
+  utter_goodbye:
+  - text: Bye
+actions:
+- action_provide_availability
+- utter_request_appointment
+- utter_confirm_appointment
+- utter_goodbye
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

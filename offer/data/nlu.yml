@@ -1,0 +1,55 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - have a nice day
+- intent: ask_how_to_help
+  examples: |
+    - What can I do for you?
+    - How can I assist you?
+    - What do you need?
+    - What can i do for you
+    - what can i do for you
+- intent: indicate_availability
+  examples: |
+    - Sure, when are you available?
+    - What days do you have open?
+    - When can we meet?
+    - Sure when are you available
+- intent: request_appointment
+  examples: |
+    - Can I schedule an appointment?
+    - I'd like to book a meeting
+    - Let's set up a time to meet
+- intent: provide_availability
+  examples: |
+    - I'm available on [Monday](day)
+    - How about [Tuesday](day)?
+    - I can do [Friday](day)
+- intent: confirm_appointment
+  examples: |
+    - Ok, see you then
+    - Great, it's set
+    - Perfect, looking forward to it
+    - Sure, I am available on [Monday](day).
+    - The first common available day is [2024-01-08](date) Shall we schedule for that day?
+    - The first common available date for all parties is [2024-07-24](date). Shall we schedule for that date?
+    - The first common available date for all parties is [2024-07-24](date). shall we schedule for that date
+    - The first common available date for all parties is [2024-07-24](date). shall we schedule for that date
+- intent: acknowledge_unavailability
+  examples: |
+    - I'm not available that day
+    - That doesn't work for me
+    - Can we try a different day?
+    - No, I am not available on that day
+    - I'm sorry, we don't have any common available dates among all parties.
