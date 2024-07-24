@@ -1,0 +1,9 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# Model files
+models/

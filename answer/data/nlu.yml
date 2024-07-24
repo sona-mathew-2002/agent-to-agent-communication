@@ -1,0 +1,51 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+- intent: ask_how_to_help
+  examples: |
+    - What can I do for you?
+    - How can I assist you?
+    - What do you need?
+- intent: request_appointment
+  examples: |
+    - Can I schedule an appointment?
+    - I'd like to book a meeting
+    - Let's set up a time to meet
+    - Can i schedule an appointment
+- intent: provide_availability
+  examples: |
+    - I'm available on Monday.Does that work for you?
+    - How about Tuesday ?
+    - I can do Friday
+    - How about Monday? Does that work for you?
+    - Here are my available days Monday, Tuesday, Wednesday
+    - Here are my available dates: 2024-07-22, 2024-07-24, 2024-07-26, 2024-07-29, 2024-07-31, 2024-08-02, 2024-08-05, 2024-08-07, 2024-08-09, 2024-08-12, 2024-08-14, 2024-08-16, 2024-08-19
+- intent: confirm_availability
+  examples: |
+    - Sure, I am available then
+    - Yes, that works for me
+    - I can make that day
+    - Ok see you then
+- intent: reject_availability
+  examples: |
+    - No, I am not available that day
+    - Sorry, that doesn't work for me
+    - I'm busy on that day
+- intent: acknowledge_unavailability
+  examples: |
+    - Oh. I'll let you know about my updated schedule
+    - It's fine. We can schedule an appointment later
+- intent: confirm_appointment
+  examples: |
+    - Ok, see you then
+    - Great, it's set
+    - Perfect, looking forward to it
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - Take care

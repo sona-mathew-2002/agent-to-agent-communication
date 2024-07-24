@@ -1,0 +1,44 @@
+version: "3.1"
+
+stories:
+
+- story: respond to appointment request
+  steps:
+  - intent: greet
+  - action: utter_ask_how_to_help
+  - intent: request_appointment
+  - action: utter_ask_availability
+  - intent: provide_availability
+  - action: action_find_common_availability
+  - intent: confirm_availability
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: action_deactivate_loop
+  - active_loop: null
+
+
+
+- story: reject and reschedule appointment
+  steps:
+  - intent: acknowledge_unavailability
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: action_deactivate_loop
+  - active_loop: null
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_ask_how_to_help
+  - intent: request_appointment
+  - action: utter_ask_availability
+  - intent: provide_availability
+  - action: action_find_common_availability
+  - slot_was_set:
+    - scheduled_date: '2024-07-24'
+  - intent: confirm_availability
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: action_deactivate_loop
+  - active_loop: null
+
